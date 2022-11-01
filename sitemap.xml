@@ -2,9 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mcfranco.gitee.io/2022/11/01/springmvc%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcfranco.gitee.io/2022/11/01/SpringBoot%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcfranco.gitee.io/2022/11/01/spring%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcfranco.gitee.io/2022/06/07/javaweb%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcfranco.gitee.io/2022/11/01/javascript%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcfranco.gitee.io/2022/11/01/ajax%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mcfranco.gitee.io/2022/11/01/Mybatis%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mcfranco.gitee.io/2022/10/25/%E5%85%B3%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</loc>
     
-    <lastmod>2022-10-25</lastmod>
+    <lastmod>2022-11-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -30,15 +93,6 @@
   
   <url>
     <loc>https://mcfranco.gitee.io/2022/06/07/%E4%BD%A0%E5%8E%BB%E4%BA%86%E8%8B%B1%E5%9B%BD/</loc>
-    
-    <lastmod>2022-10-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mcfranco.gitee.io/2022/06/07/javaweb%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2022-10-22</lastmod>
     
@@ -92,14 +146,14 @@
 
   
   <url>
-    <loc>https://mcfranco.gitee.io/tags/Articles/</loc>
+    <loc>https://mcfranco.gitee.io/tags/Web/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://mcfranco.gitee.io/tags/Web/</loc>
+    <loc>https://mcfranco.gitee.io/tags/Articles/</loc>
     <lastmod>2022-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

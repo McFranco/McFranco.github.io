@@ -1,0 +1,535 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JavaScript笔记 | Clemento的技术小窝</title><meta name="keywords" content="Web"><meta name="author" content="YIF"><meta name="copyright" content="YIF"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="java是一种强类型语言，强类型怎么理解？java语言存在编译阶段，假设有代码int i;那么在java中有一个特点是：java程序编译阶段就已经确定了i变量的数据类型，该变量的数据类型是int类型那么该变量直到最终内存释放，一直是int类型，不可能变成其他类型。除非强转，否则无法改变变量类型，只能传值。还存在着精度丢失。javascript中的变量？    怎么声明变量？        var">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript笔记">
+<meta property="og:url" content="https://mcfranco.gitee.io/2022/11/01/javascript%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Clemento的技术小窝">
+<meta property="og:description" content="java是一种强类型语言，强类型怎么理解？java语言存在编译阶段，假设有代码int i;那么在java中有一个特点是：java程序编译阶段就已经确定了i变量的数据类型，该变量的数据类型是int类型那么该变量直到最终内存释放，一直是int类型，不可能变成其他类型。除非强转，否则无法改变变量类型，只能传值。还存在着精度丢失。javascript中的变量？    怎么声明变量？        var">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg">
+<meta property="article:published_time" content="2022-11-01T14:18:57.000Z">
+<meta property="article:modified_time" content="2022-11-01T14:27:03.191Z">
+<meta property="article:author" content="YIF">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://mcfranco.gitee.io/2022/11/01/javascript%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaScript笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-11-01 22:27:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Clemento的技术小窝" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Clemento的技术小窝</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JavaScript笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-01T14:18:57.000Z" title="发表于 2022-11-01 22:18:57">2022-11-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-01T14:27:03.191Z" title="更新于 2022-11-01 22:27:03">2022-11-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>18分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JavaScript笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>java是一种强类型语言，强类型怎么理解？<br>java语言存在编译阶段，假设有代码int i;<br>那么在java中有一个特点是：java程序编译阶段就已经确定了i变量的数据类型，该变量的数据类型是int类型<br>那么该变量直到最终内存释放，一直是int类型，不可能变成其他类型。<br>除非强转，否则无法改变变量类型，只能传值。还存在着精度丢失。<br>javascript中的变量？<br>    怎么声明变量？<br>        var 变量名;<br>    怎么给变量赋值？<br>        变量名&#x3D;值;<br>    JavaScript是一种弱类型语言，没有编译阶段，一个变量可以随意赋值；<br>重点：JavaScript是一种弱类型编程语言。<br>undefined在JS中是一个具体存在的值。<br>当一个变量没有被手动赋值的时候，系统默认复制undefined。</p>
+<p>JS的函数定义方式：<br>    第一种方式：<br>        function 函数名(形式参数列表){<br>            函数体;<br>        }<br>    第二种方式：<br>        函数名&#x3D;function(形式参数列表){<br>            函数体;<br>        }<br>    function sum(a,b){<br>        a和b都是局部变量，他们都是形参（a和b都是变量名，变量名随意）<br>    }<br>定义了函数之后必须调用才会执行。<br>NaN是一个具体存在的值，该值表示不是数字，Not a Number</p>
+<p>JS当中的方法有重载机制，JS中的函数能重载吗？<br>&#x2F;&#x2F;什么叫方法重载：同一类中相同方法名但参数不同的方法称为方法重载。<br>答：JS当中的函数在调用的时候，参数的类型没有限制，并且参数的个数也没有限制，JS就是这么的随意。<br>在JS当中，函数的名字不能重名，当函数重名的时候，后声明的函数会将之前声明的函数覆盖。<br>因为JS的弱类型特点，不严格区别参数类型，所以参数个数，类型，几个都可以，<br>而且只要是同名的函数，后写的会把前面的覆盖掉，相当于只能存在一个，而参数又不做严格区分，相当于自带重载机制<br>而java是严格区分的，所以想要传不同参数必须再写一个同名方法，但多个同名方法可以共存，系统会选择对应参数的方法去执行。</p>
+<p>&#x2F;&#x2F;什么叫方法重写：<br>如果子类不想原封不动的继承父类中的方法，可以对方法进行重写。<br>子类继承父类中的所有方法，当需要方法重写时，需要子类中新的方法与父类中的方法名，参数类型和个数，返回值均相同。<br>方法体可根据需要任意编写，但注意返回值需要相同。</p>
+<p>JS中的全局变量：<br>    在函数体之外声明的变量属于全局变量，全局变量的生命周期是：浏览器打开时声明，浏览器关闭时销毁，尽量少用。<br>    因为全局变量会一直存在浏览器的内存当中，耗费内存空间。<br>    能使用局部变量就用局部变量。<br>JS中的局部变量：<br>    在函数体当中声明的变量。包括一个函数的形参都属于局部变量。<br>    局部变量的生命周期是，函数开始执行局部变量的内存空间开辟，函数执行结束之后，局部变量的内存空间释放。</p>
+<p>虽然JS中的变量在声明时不需要指定数据类型，但是在赋值时每一个数据还是有类型的<br>    JS中的数据类型包括原始类型和引用类型。<br>    EcmaScript（ES） ES6之前和ES6之后的数据类型不一样<br>    原始类型：Undefined,number,String,Boolean,Null<br>    引用类型：Object以及Object的子类</p>
+<pre><code>ES6之后在以上的六种之外添加了一个新的类型：Symbol
+
+JS中有一个运算符叫typeof，这个运算符可以在程序的运行阶段动态的获取变量的数据类型。
+typeof运算符的语法格式：
+    typeof 变量名
+typeof运算符的运算结果是以下六个字符串之一，注意字符串小写
+undefined，number，string，boolean，object，function
+在js当中比较字符串使用==，没有equals
+</code></pre>
+<p>求和，要求a变量和b变量将来的数据类型必须是数字，不能是其他类型<br>因为以下定义的sum函数是为了完成两个数字的求和<br>    function sum(a,b){</p>
+<pre><code>&#125;
+</code></pre>
+<p>别人去调用以上函数，可以这样写<br>    function sum(a,b){<br>        if(typeof a &#x3D;&#x3D; “number” &amp;&amp; typeof b &#x3D;&#x3D; “number”<br>        return a + b;<br>    }</p>
+<p>Undefined类型只有一个值，这个值就是undefined<br>当一个变量没有手动赋值，系统默认赋值undefined<br>或者也可以给一个变量手动赋值undefined</p>
+<p>Number类型包括哪些值？<br>    -1,1,2,3.14,100,….NaN Infinitiy<br>    整数，浮点数，正数负数，不是数字，无穷大都属于Number类型。<br>        什么情况下结果是NaN呢？<br>        当运算结果本应是一个数字，但最后算完不是一个数字的时候<br>    Infinity（当除数为0的时候，结果为无穷大）</p>
+<pre><code>1.关于isNaN函数？
+用法isNaN(数据),结果是true表示这不是一个数字，false表示这是一个数字
+2.parseInt()函数 可以将字符串自动转换成数字，并且取整数位
+3.parseFloat()函数 可以将字符串自动转换成数字，
+4.Math.ceil()函数（Math是数学类，数学类当中有一个函数ceil()，作用是向上取整
+</code></pre>
+<p>Boolean类型<br>    两个值，true和false<br>    在Boolean类型中有一个函数叫Boolean(),该函数的作用是将非布尔类型转成布尔类型。<br>    1 true<br>    0 false<br>    “” false<br>    “abc” true<br>    null false<br>    NaN false<br>    undefined false<br>    Infinity true</p>
+<p>Null类型只有一个值，null</p>
+<p>String类型<br>    在JS当中字符串可以使用单引号，也可以使用双引号<br>        var s1 &#x3D; ‘abcdef’;<br>        var s2 &#x3D; “abcdef”;<br>    在JS当中，怎么创建字符串对象呢？<br>        两种方式<br>        第一种：var s&#x3D; “abc”;<br>        第二种（使用JS内置的支持类String，可以直接用，String的父类是Object</p>
+<pre><code>小string（属于原始类型String）
+var s= &quot;abc&quot;;
+
+调用内置函数的一般称为大String（属于Object类型）
+var y = new String(&quot;abc&quot;);
+
+无论小string还是大String，他们的属性和函数都是通用的。
+
+常用函数：
+    length 获取字符串长度
+    indexof 获取指定字符串在在当前字符串中第一次出现处的索引
+    lastindexof 获取指定字符串在当前字符串中最后一次出现处的索引
+    replace 替换
+    substr 截取子字符串
+    substring 截取子字符串
+    toLowerCase 转换小写
+    toUpperCase 转换大写
+    split 拆分字符串
+
+获取字符串长度
+    alert(x.length);
+
+    alert(&quot;http://www.baidu.com&quot;.indexof(&quot;http&quot;));//0
+    alert(&quot;http://www.baidu.com&quot;.indexof(&quot;https&quot;));//-1
+
+判断一个字符串中是否包含某个子字符串？
+    alert(&quot;http://www.baidu.com&quot;.indexof(&quot;https&quot;) &gt;=0 ? &quot;包含&quot; : &quot;不包含&quot; );//不包含
+
+replace
+&quot;name=value%name=value%name=value&quot;.replace(&quot;%&quot;,&quot;&amp;&quot;);//只替换了一个
+想全部替换需要正则表达式
+
+考点：经常问，substr和substring的区别？
+//substr(startIndex,length)
+alert(&quot;abcdefxyz&quot;.substr(2.4));//cdef
+//substring(startIndex,endIndex)注意：不包含endIndex
+alert(&quot;abcdefxyz&quot;.substring(2,4);//cd
+
+Object类型：
+    Object类型是所有类型的超类，自定义的任何类型，默认继承Object
+    Object类包括哪些属性？
+    复习：Java的Object类中的方法
+    clone方法，toString方法，equals方法，toString方法，hashcode方法，getClass方法，notify唤醒线程方法，notifyAll方法，wait等待线程方法，finalize方法（gc回收器）。
+
+    JS的Object类属性
+        prototype属性（最常用的）：作用是给类动态的扩展属性和函数。
+        constructor属性
+    Object类包括哪些函数？
+        toString方法
+        toLocalString方法
+        valueOf方法
+    在JS当中定义的类默认继承Object，会继承Object类当中所有的属性以及函数。
+    换句话说，自己定义的类当中也有prototype属性。
+
+    在JS当中怎么定义类？怎么new对象？
+        定义类的方法：
+        第一种方法：
+            function 类名(形参)&#123;
+            
+            &#125;
+        第二种方法：
+            类名 function(形参)&#123;
+            
+            &#125;
+        创建对象的语法：
+            new 构造方法名(实参);//构造方法名和类名一致。
+
+举个例子：有函数
+        function sayHello()&#123;
+        
+        &#125;
+        
+        sayHello();
+
+        //这种方式就表示把sayHello当做一个类来创建对象
+        var obj = new sayHello();//obj是一个引用，保存内存地址指向堆中的对象。
+
+JS当中类的定义，同时又是一个构造函数的定义
+在JS中类的定义和构造函数的定义是放在一起来定义的。
+</code></pre>
+<p>可以通过prototype这个属性来给类动态扩展属性以及函数<br>    function Production(pno,pname,price){<br>        this.pno&#x3D;pno;<br>        this.pname&#x3D;pname;<br>        this.price&#x3D;price;<br>        this.getPrice &#x3D; function(){<br>            return this.price;<br>        }<br>    }</p>
+<pre><code>var XiGua = new Product(111,&quot;西瓜&quot;,4.0)
+
+Product.prototype.getPname = function()&#123;
+    return this.pname;
+&#125;
+上述代码作用为假设有一个product类，通过他的prototype属性可以直接新建一个函数getPname传给product类来扩展。
+
+调用后期扩展的getPname函数
+    var pname=XiGua.getPname();
+</code></pre>
+<p>番外：null undefined NaN有什么区别？<br>    null NaN undefined数据类型不一致。<br>    null（Object） NaN（Number） undefined（Undefined）</p>
+<pre><code>//null和undefined可以等同。
+null == NaN //false
+null == undefined // true
+undefined ==NaN //false
+
+    在JS当中有两个比较特殊的运算符
+    ==（等同运算符，只判断值是否相等）
+    ===（全等运算符，既判断是否相等，又判断数据类型是否相等）
+把上方三个例子拿下来换成三个等号，三个结果都是false
+</code></pre>
+<p>JS中的常用事件<br>    blur失去焦点<br>    change下拉列表选中项改变，或文本框内容改变<br>    click鼠标单击<br>    dblclick鼠标双击<br>    focus获得焦点<br>    keydown键盘按下<br>    keyup键盘弹起<br>    load页面加载完毕<br>    mousedown鼠标按下<br>    mouseover鼠标经过<br>    mousemove鼠标移动<br>    mouseout鼠标离开<br>    mouseup鼠标弹起<br>    reset表单重置<br>    select文本被选定<br>    submit表单提交</p>
+<pre><code>任何一个事件都会对应一个事件句柄，事件句柄是在事件前添加on
+onXXX这个事件句柄出现在一个标签的属性位置上。（事件句柄以属性的形式存在。）
+</code></pre>
+<p>注册事件的第一种方式，直接在标签中使用事件句柄<br>    对于当前程序来说，sayHello函数被称为回调函数（callback函数）<br>    回调函数的特点：自己把这个函数代码写出来了，但是这个函数不是自己负责调用，由其他程序负责调用这个函数<br>    function sayHello(){<br>        alert(“hello js!”)<br>    }</p>
+<pre><code>&lt;input type=&quot;button&quot; value=&quot;hello&quot; onclick=&quot;sayHello()&quot;/&gt;
+
+java中也有回调函数，假定有一个主函数调用run方法，站在主函数的角度看run方法叫正向调用
+站在run方法编写者角度来看这个方法，把run方法叫做回调函数。
+</code></pre>
+<p>第二种注册事件的方式，是使用纯JS代码完成事件的注册。<br>    <input type="button" value="hello2" id=mybtn /></p>
+<pre><code>&lt;input type=&quot;button&quot; value=&quot;hello3&quot; id=mybtn1 /&gt;
+第一步：先获取这个按钮对象
+&lt;script type=text/javascript&gt;
+    function doSome()&#123;
+        alert(&quot;do some!&quot;);
+    &#125;
+(document全部小写，内置对象，可以直接用，document就代表整个html页面)
+    var btnObj = document.getElementById(&quot;mybtn&quot;);
+第二步：给按钮对象的onclick属性赋值。
+    btnObj.onclick = doSome;//注意，千万别加小括号，btnObj.onclick = doSome();这是错误的写法。
+    
+    var mybtn1 = document.getElementById(&quot;mybtn1&quot;);
+    mybtn1.onclick=function()&#123;//这个函数没有名字，叫做匿名函数，这个匿名函数也是一个回调函数。
+        alert(&quot;test....&quot;);//这个函数在页面打开的时候只是注册上，不会被调用，在click事件发生之后才会被调用。
+    &#125;
+
+一行代码能不能全写出来？能
+    document.getElementById(&quot;mybtn2&quot;).onclick = function()&#123;
+        alert(&quot;test22222.....&quot;);
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<p>关于JS代码的执行顺序<br>    有时会遇到需要先获取对象才能绑定事件的情况，这样的话代码就必须按顺序编写，但是这样比较麻烦<br>    可以考虑使用onload句柄，等待页面全部元素加载完毕之后才会发生load事件。<br>    例子<br>    <body><br>        <script type="text/javascript"><br>            window.onload = function(){<br>                document.getElementById("mybtn2").onclick = function(){<br>                    alert("test22222.....");<br>                }<br>            }<br>        </script><br>    </body><br>    当页面加载完毕时才会发生load事件</p>
+<p>捕捉键盘输入<br>    举例，输入账户名密码，捕捉enter键直接登录<br>        window.onload &#x3D; function(){<br>                var usernameElt &#x3D; document.getElementById(“username”).onclick &#x3D; function(){<br>                &#x2F;&#x2F;回车键的键值是13<br>                &#x2F;&#x2F;ESC的键值是27<br>                    usernameElt.onkeydown &#x3D; function(event&#x2F;&#x2F;局部变量，随便写){<br>                        &#x2F;&#x2F;获取键值<br>                        &#x2F;&#x2F;对于“键盘事件对象”来说，都有keyCode属性用来获取键值<br>                        if(event.keyCode &#x3D;&#x3D;&#x3D; 13){<br>                            alert(“正在进行验证”);<br>                        }<br>                    }</p>
+<pre><code>            &#125;
+    
+    &lt;input type=&quot;text&quot; id=&quot;username&quot;/&gt;
+</code></pre>
+<p>JS的void运算符<br>    void运算符的语法：void(表达式)<br>    运算原理：执行表达式，但不返回任何结果。<br>    javascript:void(0)<br>    其中javascript:作用是告诉浏览器后面是一段JS代码。<br>    以下程序的javascript是不能省略的。<br>    &lt;a href&#x3D;”javascript:void(0)” onclick&#x3D;”window.alert(‘test code’)&gt;<br>        既保留住超链接的样式，同时用户点击该超链接的时候执行一段JS代码，但页面还不能跳转。<br>    </a></p>
+<p>JS的控制语句<br>    if switch while do..while.. for break continue</p>
+<pre><code>JS特有的：for..in语句
+    with语句
+java中的数组：int[] arr=&#123;1,2,3,4,5,6&#125;;
+js中的数组：var arr=&#123;false,true,1,2,&quot;abc&quot;,3.14&#125;;JS数组中的元素类型随意，个数随意
+遍历数组
+    for(var i = 0;arr.length;i++)&#123;
+        
+    &#125;
+for.. in语句
+for(var i in arr)&#123;
+    alert(arr[i]);
+&#125;
+这个i是下标
+for..in语句可以遍历对象的属性
+
+在JavaScript中，可以使用.和[]来访问对象的属性。
+二者的区别：.表示一般作为静态对象使用时来存取属性，而[]表示在动态存取属性是非常有用
+例：var object = &#123;name:&#39;zhangsan&#39;,age:29&#125;;
+var name1 = object.name;var name2 = object[&#39;name&#39;];
+
+假设这有个user函数，里面有用户名和密码两个属性。
+for (var shuXingMing in u)&#123;
+
+&#125;
+此时shuXingMing是属性名，类型为字符串
+
+with(u)&#123;
+    username+&quot;,&quot;+password;
+&#125;
+改变作用域，可以在指定的代码区域，直接通过节点名称调用对象
+就是可以不用写u.username;u.password;了，写一起比较省事
+但是不常用，因为你把不在这当中的属性写进去他也会一起。
+</code></pre>
+<p>DOM部分<br>        JavaScript包括三大块：<br>            ECMAScript：JS的核心语法（ES规范&#x2F;ECMA-262标准）<br>            DOM：Document Object Model（文档对象模型：对网页当中的节点进行增删改的过程。）HTML文档被当成一颗DOM树来看待。<br>            BOM：Browser Object Model（浏览器对象模型）<br>        DOM和BOM的区别和联系？<br>            BOM的顶级对象是：window<br>            DOM的顶级对象是：document<br>            实际上BOM是包括DOM的<br>    获取文本框的value<br>        &lt;script type&#x3D;”text&#x2F;javascript“&gt;<br>            window.onload &#x3D; function(){<br>                document.getElementById(“setBtn”).onclick &#x3D; function(){<br>                    document.getElementById(“username2”).value &#x3D; document.getElementById(“username1”).value;<br>                }<br>            }<br>        </script></p>
+<pre><code>    &lt;int type=&quot;text&quot; id=&quot;username1&quot; /&gt;
+    &lt;int type=&quot;button&quot; value=&quot;将第一个文本框中的value赋值到第二个文本框上&quot; id=&quot;setBtn&quot; /&gt;
+    &lt;br&gt;
+    &lt;int type=&quot;text&quot; id=&quot;username2&quot; /&gt;
+    按一下按键就把第一个文本框中输入的值复制到第二个框中
+</code></pre>
+<p>innerHTML和innerText操作div和span<br>        &lt;script type&#x3D;”text&#x2F;javascript”&gt;<br>            window.onload &#x3D; function(){<br>                var btn &#x3D; document.getElementById(“btn”);<br>                btn.onclick &#x3D; function(){<br>                    &#x2F;&#x2F;设置div的内容<br>                    &#x2F;&#x2F;第一步：获取div对象<br>                    var divElt &#x3D; document.getElementById(“div1”);<br>                    &#x2F;&#x2F;第二步：使用innerHTML属性来设置元素内部的内容<br>                    &#x2F;&#x2F;divElt.innerHTML &#x3D; “asdasfssggsgdg”;<br>                    &#x2F;&#x2F;divElt.innerHTML &#x3D; “<font color='red'>用户名不能为空！</font>“; innerHTML可以解释执行后面的HTML代码<br>                    divElt.innerText &#x3D; “<font color='red'>用户名不能为空！</font>“; innerText只会把内容以文本的形式输出<br>                }<br>            }<br>        </script></p>
+<pre><code>    &lt;input type=&quot;button&quot; value=&quot;设置div中的内容&quot; id=&quot;btn&quot;/&gt;
+
+    &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;
+    这俩都不是方法，是属性！
+</code></pre>
+<p>关于正则表达式<br>    什么是正则表达式，有什么用？<br>        正则表达式：Regular Expression<br>        正则表达式主要用在字符串格式匹配方面<br>        正则表达式实际上是一门独立的学科，在各种语言中都有支持<br>    常见的正则表达式符号？<br>        .匹配除换行符以外的任意字符<br>        \w 匹配字母或数字或下划线或汉字<br>        \s 匹配任意的空白符<br>        \d 匹配数字<br>        \b 匹配单词的开始或结束<br>        ^ 匹配字符串的开始<br>        $ 匹配字符串的结束</p>
+<pre><code>    * 重复零次或更多次
+    + 重复一次或更多次
+    ? 重复零次或一次
+    &#123;n&#125; 重复n次
+    &#123;n,&#125; 重复n次或更多次
+    &#123;n,m&#125; 重复n到n次
+
+    \W 匹配任意不是字母，数字，下划线，汉字的字符
+    \S 匹配任意不是空白符的字符
+    \D 匹配任意非数字的字符
+    \B 匹配不是单词开头或结束的位置
+    [^x] 匹配除了x以外的任意字符
+    [^aeiou] 匹配除了aeiou这几个字母以外的任意字符
+
+    正则表达式当中的小括号()优先度较高
+    [1-9]表示1到9的任意一个数字（次数是一次）
+    [A-Za-z0-9]表示A-Za-z0-9中的任意一个字符
+    [A-Za-z0-9-]表示A-Z，a-z，0-9，-，以上所有字符中的任意一个字符
+
+简单的正则表达式要会写
+    QQ号的正则表达式：^[1-9][0-9]&#123;4,&#125;$
+
+他人编写的正则表达式要能看懂
+    email正则：^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+
+怎么创建正则表达式对象，怎么调用正则表达式对象的方法？
+    第一种创建方式：
+        var regExp = /正则表达式/flags;
+    第二种创建方式：使用内置支持类RegExp
+        var regExp = new RegExP(&quot;正则表达式&quot;,&quot;flags&quot;);这里也可以写字符串，就只检索字符串
+    关于flags：
+        g：全局匹配
+        i：忽略大小写
+        m：多行搜索（ES规范制定之后才支持m），如果使用正则表达式则不能使用m
+
+    正则表达式对象的test()方法？
+        true / false = 正则表达式对象.test(用户填写的字符串);
+        true : 字符串格式匹配成功
+        false :字符串格式匹配失败
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        window.onload = function()&#123;
+            //给按钮绑定click
+            document.getElementById(&quot;btn&quot;).onclick=function()&#123;
+                var email = document.getElementById(&quot;email&quot;).value;
+                var emailRegExp = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                var ok = emailRegExp.test(email);
+                if(ok)&#123;
+                    document.getElementById(&quot;emailError&quot;).innerText = &quot;邮箱地址合法！&quot;;
+                &#125;else&#123;
+                    document.getElementById(&quot;emailError&quot;).innerText = &quot;邮箱地址不合法！&quot;;
+                &#125;
+            &#125;
+            //给文本框绑定focus
+            document.getElementById(&quot;email&quot;).onfocus = function()&#123;
+                document.getElementById(&quot;emailError&quot;).innerText = &quot;&quot;;
+            &#125;
+        &#125;
+    &lt;/script&gt;
+
+    &lt;input type=&quot;text&quot; id=&quot;email&quot;/&gt;
+    &lt;span id=&quot;emailError&quot; style=&quot;color:red;font-size:12px;&quot;&gt;&lt;/span&gt;
+    &lt;br&gt;
+    &lt;input type=&quot;button&quot; value=&quot;验证邮箱&quot; id=&quot;btn&quot;/&gt;
+</code></pre>
+<p>去除字符串的前后空白trim<br>    字符串类型的变量默认继承String类的一个函数trim()，作用是可以去除字符串的前后空白，但低版本的IE不支持trim函数<br>    那此时怎么办呢？<br>        可以自己对String类扩展一个全新的trim()函数<br>        String.prototype.trim &#x3D; function(){<br>            &#x2F;&#x2F;在当前的方法中的this代表的就是当前字符串<br>            this.replace<br>            return this.replace(&#x2F;^\s+),””).replace(&#x2F;\s+&amp;,””);<br>        }</p>
+<pre><code>    注意！div独占行，span可以跟在行后边！！
+</code></pre>
+<p>从这里开始接写的几个HTML看</p>
+<p>js中直接创建数组，可以随便塞，塞多少都行，自动扩容且数据类型无限制<br>如果采用另一种方式，new Array()<br>参数什么也不写数组长度是0，写一个数代表给定长度，写更多代表直接塞元素，此时长度为参数的个数</p>
+<p>总结：有哪些方式可以通过浏览器向服务器发送请求？<br>    1.表单form的提交<br>    2.超链接<br>    3.document.location<br>    4.window.location<br>    5.window,open(“url”)<br>    6.直接在浏览器地址栏上输入url</p>
+<pre><code>以上所有 请求方式均可以携带数据给服务器，只有通过表单提交的数据才是动态的
+</code></pre>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://mcfranco.gitee.io">YIF</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://mcfranco.gitee.io/2022/11/01/javascript%E7%AC%94%E8%AE%B0/">https://mcfranco.gitee.io/2022/11/01/javascript%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://mcfranco.gitee.io" target="_blank">Clemento的技术小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Web/">Web</a></div><div class="post_share"><div class="social-share" data-image="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/01/spring%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Spring笔记</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/01/Mybatis%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Mybatis笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/25/%E5%85%B3%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" title="关于把博客搬迁到服务器上遇到的一些坑"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-25</div><div class="title">关于把博客搬迁到服务器上遇到的一些坑</div></div></a></div><div><a href="/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/" title="来搭一个属于自己的博客吧"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-08</div><div class="title">来搭一个属于自己的博客吧</div></div></a></div><div><a href="/2022/11/01/Mybatis%E7%AC%94%E8%AE%B0/" title="Mybatis笔记"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">Mybatis笔记</div></div></a></div><div><a href="/2022/11/01/springmvc%E7%AC%94%E8%AE%B0/" title="SpringMVC笔记"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">SpringMVC笔记</div></div></a></div><div><a href="/2022/11/01/spring%E7%AC%94%E8%AE%B0/" title="Spring笔记"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">Spring笔记</div></div></a></div><div><a href="/2022/11/01/ajax%E7%AC%94%E8%AE%B0/" title="AJAX笔记"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/d21c0471deb6e763b47976d4d4f56da3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-01</div><div class="title">AJAX笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NjU3Mi8zMzAzNQ=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YIF</div><div class="author-info__description">Coding change the World，不定期出现的熬夜冠军</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/McFranco/"><i class="fab fa-github"></i><span>在GitHub上关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/McFranco" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/478286331@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://weibo.com/u/5540843939" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/7696030" target="_blank" title="BiliBili"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Clemento的技术小窝今日起正式上线啦，关注我的博客获取更多有趣好玩的知识分享。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/01/ajax%E7%AC%94%E8%AE%B0/" title="AJAX笔记"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/d21c0471deb6e763b47976d4d4f56da3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="AJAX笔记"/></a><div class="content"><a class="title" href="/2022/11/01/ajax%E7%AC%94%E8%AE%B0/" title="AJAX笔记">AJAX笔记</a><time datetime="2022-11-01T14:26:18.000Z" title="发表于 2022-11-01 22:26:18">2022-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/01/springmvc%E7%AC%94%E8%AE%B0/" title="SpringMVC笔记"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringMVC笔记"/></a><div class="content"><a class="title" href="/2022/11/01/springmvc%E7%AC%94%E8%AE%B0/" title="SpringMVC笔记">SpringMVC笔记</a><time datetime="2022-11-01T14:24:27.000Z" title="发表于 2022-11-01 22:24:27">2022-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/01/SpringBoot%E7%AC%94%E8%AE%B0/" title="SpringBoot笔记"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/d21c0471deb6e763b47976d4d4f56da3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot笔记"/></a><div class="content"><a class="title" href="/2022/11/01/SpringBoot%E7%AC%94%E8%AE%B0/" title="SpringBoot笔记">SpringBoot笔记</a><time datetime="2022-11-01T14:22:25.000Z" title="发表于 2022-11-01 22:22:25">2022-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/01/spring%E7%AC%94%E8%AE%B0/" title="Spring笔记"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring笔记"/></a><div class="content"><a class="title" href="/2022/11/01/spring%E7%AC%94%E8%AE%B0/" title="Spring笔记">Spring笔记</a><time datetime="2022-11-01T14:20:17.000Z" title="发表于 2022-11-01 22:20:17">2022-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/01/javascript%E7%AC%94%E8%AE%B0/" title="JavaScript笔记"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript笔记"/></a><div class="content"><a class="title" href="/2022/11/01/javascript%E7%AC%94%E8%AE%B0/" title="JavaScript笔记">JavaScript笔记</a><time datetime="2022-11-01T14:18:57.000Z" title="发表于 2022-11-01 22:18:57">2022-11-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By YIF</div><div class="footer_custom_text">欢迎来到Clemento的技术小窝，这里有很多好玩又有趣的知识分享。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js"></script><div class="aplayer no-destroy" data-id="5220561560" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
