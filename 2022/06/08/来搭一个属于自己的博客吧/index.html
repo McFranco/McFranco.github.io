@@ -1,0 +1,312 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>来搭一个属于自己的博客吧 | Clemento的技术小窝</title><meta name="keywords" content="Web"><meta name="author" content="YIF"><meta name="copyright" content="YIF"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="个人博客搭建心得准备工作想要搭建一个像我这样的个人博客吗？其实你只需要大概三十分钟左右的时间就可以拥有这样一个和我一样的博客了，我的这个博客是基于运行在Node.js上的hexo框架运行在github pages上的，Hexo是一个基于 node.js的快速生成静态博客的开源框架,支持 Markdown和大多数 Octopress插件,一个命令即可部署到 Github页面、 Giteee、 Her">
+<meta property="og:type" content="article">
+<meta property="og:title" content="来搭一个属于自己的博客吧">
+<meta property="og:url" content="https://mcfranco.gitee.io/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/index.html">
+<meta property="og:site_name" content="Clemento的技术小窝">
+<meta property="og:description" content="个人博客搭建心得准备工作想要搭建一个像我这样的个人博客吗？其实你只需要大概三十分钟左右的时间就可以拥有这样一个和我一样的博客了，我的这个博客是基于运行在Node.js上的hexo框架运行在github pages上的，Hexo是一个基于 node.js的快速生成静态博客的开源框架,支持 Markdown和大多数 Octopress插件,一个命令即可部署到 Github页面、 Giteee、 Her">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg">
+<meta property="article:published_time" content="2022-06-08T03:35:27.000Z">
+<meta property="article:modified_time" content="2022-10-22T03:32:34.025Z">
+<meta property="article:author" content="YIF">
+<meta property="article:tag" content="Web">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://mcfranco.gitee.io/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"prismjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '来搭一个属于自己的博客吧',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-22 11:32:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Clemento的技术小窝" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Clemento的技术小窝</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">来搭一个属于自己的博客吧</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-08T03:35:27.000Z" title="发表于 2022-06-08 11:35:27">2022-06-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-22T03:32:34.025Z" title="更新于 2022-10-22 11:32:34">2022-10-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="来搭一个属于自己的博客吧"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="个人博客搭建心得"><a href="#个人博客搭建心得" class="headerlink" title="个人博客搭建心得"></a>个人博客搭建心得</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>想要搭建一个像我这样的个人博客吗？其实你只需要大概三十分钟左右的时间就可以拥有这样一个和我一样的博客了，我的这个博客是基于运行在Node.js上的hexo框架运行在github pages上的，Hexo是一个基于 node.js的快速生成静态博客的开源框架,支持 Markdown和大多数 Octopress插件,一个命令即可部署到 Github页面、 Giteee、 Heroku等,强大的APl,可无限扩展,拥有<br>数百个主题和插件。但他也不是完美的，它本质上是一个静态网页生成器，每次更新内容都需要你重新把他push上去才可以，但是它是免费的啊！对于免费的东西再怎么苛责都是无意义的，那么话不多说，我们就开始吧！</p>
+<p>你需要准备的东西：</p>
+<p>1.Node.js</p>
+<p>2.Git Bash</p>
+<p>3.一个Github账号</p>
+<p>4.一台能上网的电脑和你勤劳的小手</p>
+<h2 id="部署Node-js"><a href="#部署Node-js" class="headerlink" title="部署Node.js"></a>部署Node.js</h2><p>这一步其实没什么好说的，根据官网引导一步一步下载安装就是，这可能是你整个步骤当中最为轻松的一步了，你所需要的就是点击<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js官网</a>然后根据引导安装。哦对了，如果你是Windows系统的电脑，别忘了配置环境变量~</p>
+<p>具体的教程可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_48485223/article/details/122709354">NodeJS安装教程</a>。</p>
+<p>npm下载慢的话也可以下载淘宝下载源cnpm.</p>
+<pre class="line-numbers language-dos" data-language="dos"><code class="language-dos">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</code></pre>
+
+<p>安装完成后，你就可以使用以下的命令来判断是否安装成功了。</p>
+<pre class="line-numbers language-dos" data-language="dos"><code class="language-dos">node -v
+npm -v</code></pre>
+
+<h2 id="部署Git-Bash"><a href="#部署Git-Bash" class="headerlink" title="部署Git Bash"></a>部署Git Bash</h2><p>同样的，下载安装即可，百度搜索Gitbash下载，然后找一个下载网站提供的安装包就行，这里推荐用腾讯软件中心的，虽然版本并不能和官网同步更新，但是最起码你用他下载很快（不用翻墙）。这里是<a target="_blank" rel="noopener" href="https://pc.qq.com/detail/13/detail_22693.html">GitBash下载地址</a>，点击普通下载就可以啦，具体的安装教程可以参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/u010348546/article/details/124280236">GitBash安装教程</a>，基本上就是无脑下一步即可。</p>
+<p>安装完成后，你可以通过以下dos命令查看是否安装成功。</p>
+<pre class="line-numbers language-dos" data-language="dos"><code class="language-dos">git --version</code></pre>
+
+<h2 id="搭建HEXO"><a href="#搭建HEXO" class="headerlink" title="搭建HEXO"></a>搭建HEXO</h2><p>到了这一步，恭喜你基本上的准备工作已经完成了。接下来你需要在你想要的地方创建一个空目录，例如D：&#x2F;myblog，然后在这个空目录右键，选择Git Bash Here。在弹出来的窗口输入以下命令。</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install -g hexo-cli
+或者
+cnpm install -g hexo-cli</code></pre>
+
+<p>如果此时报错你没有足够的权限，那么需要你手动以管理员身份运行GitBash，然后自行切换到对应的目录下。</p>
+<p>安装完成后即可使用hexo -v检验是否安装成功</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo -v</code></pre>
+
+<p>然后，初始化hexo</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo init</code></pre>
+
+<p>然后，安装npm</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install</code></pre>
+
+<p>然后，激动人心的时候来啦，</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo server
+或者
+hexo s</code></pre>
+
+<p>如果一切正常的话，在完成这一步之后，你就可以在浏览器地址栏里输入(<a target="_blank" rel="noopener" href="http://localhost:4000/)%EF%BC%8C%E6%95%B2%E4%B8%8B%E5%9B%9E%E8%BD%A6%EF%BC%8C%E4%BD%A0%E5%B0%B1%E4%BC%9A%E7%9C%8B%E5%88%B0%EF%BC%8C%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%B7%B2%E7%BB%8F%E6%90%AD%E5%BB%BA%E5%A5%BD%E4%BA%86%EF%BC%8C%E4%BD%86%E6%98%AF%E6%AD%A4%E6%97%B6%E6%88%91%E4%BB%AC%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%98%E6%90%AD%E5%BB%BA%E5%9C%A8%E6%9C%AC%E5%9C%B0%EF%BC%8C%E8%BF%98%E6%B2%A1%E6%9C%89%E8%A2%AB%E4%BC%A0%E5%88%B0%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%8A%EF%BC%8C%E9%82%A3%E4%B9%88%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%A6%81%E6%80%8E%E4%B9%88%E5%81%9A%E5%91%A2%EF%BC%9F">http://localhost:4000/)，敲下回车，你就会看到，你的博客已经搭建好了，但是此时我们的博客还搭建在本地，还没有被传到互联网上，那么接下来要怎么做呢？</a></p>
+<h2 id="在Github上的工作"><a href="#在Github上的工作" class="headerlink" title="在Github上的工作"></a>在Github上的工作</h2><p>首先你需要有一个Github账号（这不是废话吗），注册完成后，点击右上角的新建仓库（New Repository），注意！给仓库起名字的时候最好全都选择成和你的用户名一样，例如填写McFranco.github.io，这样的话你就可以把这段URL当做你的域名来使用了。</p>
+<p>创建完成后，你需要设置好SSH连接和验证你的邮箱，准备完成后，在你的博客目录下gitbash</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save</code></pre>
+
+<p>这个步骤可能会非常的漫长，不要慌，耐心等待即可，或是喝杯咖啡？</p>
+<p>好了之后，进入你的仓库的settings，给你的github pages名字设置成 你的用户名.github.io。</p>
+<p>但是这个时候，你进入你的用户名.github.io只能看到404消息，因为这时只是建立好了连接，我们还没有真正的把我们的代码push到github仓库里，重新进入你的博客目录，然后打开该目录下的_config.yml文件，在这里进行配置。</p>
+<h2 id="yml文件配置"><a href="#yml文件配置" class="headerlink" title="yml文件配置"></a>yml文件配置</h2><p>直接拉到文件末尾，在deploy type上输入git，然后复制你github的clone&#x2F;download下的SSH地址，填进deploy repo中。</p>
+<p>回到上面，在url中输入你博客的地址 XXX.github.io。</p>
+<h2 id="大功告成！"><a href="#大功告成！" class="headerlink" title="大功告成！"></a>大功告成！</h2><p>至此，你的博客的准备工作已经完全做好了，接下来你只需要简单的几个命令，就可以在互联网上见到你的博客了！</p>
+<p>第一个！</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+or
+hexo cl</code></pre>
+
+<p>这一步是清理你的文件缓存，建议每次upload的时候都清一下</p>
+<p>第二个</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo g</code></pre>
+
+<p>顾名思义，hexo generate，生成你的博客页面</p>
+<p>第三个</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo s</code></pre>
+
+<p>这一步的作用是生成一个本地的预览用静态页面，可以在这里确认你的改动确实生成了之后再push到internet上，输入localhost：4000即可查看本地博客页面。</p>
+<p>最后一步！</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo d</code></pre>
+
+<p>终于到了最后一步，前面所有的努力都是值得的，这一步是让hexo deploy内容到你的github仓库，把本地的修改全部overwrite到你的仓库中。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此，一个简单的博客就搭建好了，虽然他看起来没什么特别的，简单的界面，复杂的上传操作，但是基于github的免费仓库保管功能和pages的静态展示功能，你已经货真价实的拥有了一个属于自己的博客，而且这也不代表你的博客之路就到此结束了，你可以深度的魔改hexo的主题，给他加上各种花里胡哨的功能，你也可以把他搬迁到国内的gitee上，让他拥有更快的响应速度，总而言之，一切刚刚开始，现在，就动手搭建你的博客吧，期待见到各位的博客早日上线，拜拜~！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://mcfranco.gitee.io">YIF</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://mcfranco.gitee.io/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/">https://mcfranco.gitee.io/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://mcfranco.gitee.io" target="_blank">Clemento的技术小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Web/">Web</a></div><div class="post_share"><div class="social-share" data-image="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/25/%E5%85%B3%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"><img class="prev-cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">关于把博客搬迁到服务器上遇到的一些坑</div></div></a></div><div class="next-post pull-right"><a href="/2022/06/07/%E4%BD%A0%E5%8E%BB%E4%BA%86%E8%8B%B1%E5%9B%BD/"><img class="next-cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/d21c0471deb6e763b47976d4d4f56da3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">你去了英国</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/06/07/javaweb%E7%AC%94%E8%AE%B0/" title="javaweb笔记"><img class="cover" src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-07</div><div class="title">javaweb笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NjU3Mi8zMzAzNQ=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YIF</div><div class="author-info__description">Coding change the World，不定期出现的熬夜冠军</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/McFranco/"><i class="fab fa-github"></i><span>在GitHub上关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/McFranco" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/478286331@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://weibo.com/u/5540843939" target="_blank" title="Weibo"><i class="fab fa-weibo"></i></a><a class="social-icon" href="https://space.bilibili.com/7696030" target="_blank" title="BiliBili"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Clemento的技术小窝今日起正式上线啦，关注我的博客获取更多有趣好玩的知识分享。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%BF%83%E5%BE%97"><span class="toc-number">1.</span> <span class="toc-text">个人博客搭建心得</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Node-js"><span class="toc-number">1.2.</span> <span class="toc-text">部署Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Git-Bash"><span class="toc-number">1.3.</span> <span class="toc-text">部署Git Bash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BAHEXO"><span class="toc-number">1.4.</span> <span class="toc-text">搭建HEXO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Github%E4%B8%8A%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.5.</span> <span class="toc-text">在Github上的工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yml%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.</span> <span class="toc-text">yml文件配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%8A%9F%E5%91%8A%E6%88%90%EF%BC%81"><span class="toc-number">1.7.</span> <span class="toc-text">大功告成！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">1.8.</span> <span class="toc-text">结语</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/25/%E5%85%B3%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" title="关于把博客搬迁到服务器上遇到的一些坑"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于把博客搬迁到服务器上遇到的一些坑"/></a><div class="content"><a class="title" href="/2022/10/25/%E5%85%B3%E4%BA%8E%E6%8A%8A%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%81%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/" title="关于把博客搬迁到服务器上遇到的一些坑">关于把博客搬迁到服务器上遇到的一些坑</a><time datetime="2022-10-25T06:29:22.000Z" title="发表于 2022-10-25 14:29:22">2022-10-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/" title="来搭一个属于自己的博客吧"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/62c73bf9e1f826ae92181cf82f7ffdff.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="来搭一个属于自己的博客吧"/></a><div class="content"><a class="title" href="/2022/06/08/%E6%9D%A5%E6%90%AD%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E5%90%A7/" title="来搭一个属于自己的博客吧">来搭一个属于自己的博客吧</a><time datetime="2022-06-08T03:35:27.000Z" title="发表于 2022-06-08 11:35:27">2022-06-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/07/%E4%BD%A0%E5%8E%BB%E4%BA%86%E8%8B%B1%E5%9B%BD/" title="你去了英国"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/d21c0471deb6e763b47976d4d4f56da3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你去了英国"/></a><div class="content"><a class="title" href="/2022/06/07/%E4%BD%A0%E5%8E%BB%E4%BA%86%E8%8B%B1%E5%9B%BD/" title="你去了英国">你去了英国</a><time datetime="2022-06-07T13:32:22.000Z" title="发表于 2022-06-07 21:32:22">2022-06-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/07/%E5%A7%90%E5%A7%90/" title="姐姐"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/ed7ad832219491dd3ae1ce409c8cad73.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="姐姐"/></a><div class="content"><a class="title" href="/2022/06/07/%E5%A7%90%E5%A7%90/" title="姐姐">姐姐</a><time datetime="2022-06-07T13:32:22.000Z" title="发表于 2022-06-07 21:32:22">2022-06-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/06/07/javaweb%E7%AC%94%E8%AE%B0/" title="javaweb笔记"><img src="https://gulimall-jiangyif.oss-cn-beijing.aliyuncs.com/a43d980b0dc83c4bc24ffc2050be7a83.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javaweb笔记"/></a><div class="content"><a class="title" href="/2022/06/07/javaweb%E7%AC%94%E8%AE%B0/" title="javaweb笔记">javaweb笔记</a><time datetime="2022-06-07T13:08:22.000Z" title="发表于 2022-06-07 21:08:22">2022-06-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By YIF</div><div class="footer_custom_text">欢迎来到Clemento的技术小窝，这里有很多好玩又有趣的知识分享。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdn.jsdelivr.net/npm/prismjs@1/plugins/line-numbers/prism-line-numbers.min.js"></script><div class="aplayer no-destroy" data-id="5220561560" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
