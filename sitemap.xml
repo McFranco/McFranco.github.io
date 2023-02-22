@@ -139,7 +139,7 @@
 
   <url>
     <loc>https://mcfranco.gitee.io/</loc>
-    <lastmod>2023-02-15</lastmod>
+    <lastmod>2023-02-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -147,14 +147,14 @@
   
   <url>
     <loc>https://mcfranco.gitee.io/tags/Web/</loc>
-    <lastmod>2023-02-15</lastmod>
+    <lastmod>2023-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://mcfranco.gitee.io/tags/Articles/</loc>
-    <lastmod>2023-02-15</lastmod>
+    <lastmod>2023-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
